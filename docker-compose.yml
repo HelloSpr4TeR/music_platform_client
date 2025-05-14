@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  my-app:
+    build: .
+    image: my-app
+    ports:
+      - "3000:3000"  # Пробрасываем порт 3000
+    dns:
+      - 8.8.8.8      # Используем DNS от Google
+    environment:
+      - NODE_ENV=production   # Пример переменной окружения
+    volumes:
+      - ./:/app   # Монтируем текущую директорию в контейнер (для разработки)
+    networks:
+      - app-network  # Настроим сеть для общения контейнеров (если будут другие сервисы)
+    
+networks:
+  app-network:
+    driver: bridge

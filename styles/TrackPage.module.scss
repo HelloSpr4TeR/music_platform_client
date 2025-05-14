@@ -1,0 +1,137 @@
+$primary-color: #2d3e58;
+$accent-color: #4a90e2;
+$background-color: #f0f4f8;
+$text-color: #fff;
+$button-color: #ffffff;
+
+.trackPage {
+  padding: 30px;
+  background-color: $background-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: $primary-color;
+}
+
+.trackInfo {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trackImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trackDetails {
+  margin-left: 30px;
+  flex-grow: 1;
+}
+
+.trackDetails h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary-color;
+  margin: 5px 0;
+}
+
+.trackDetails p {
+  font-size: 1.1rem;
+  color: $primary-color;
+}
+
+.commentSection {
+  margin-top: 20px;
+}
+
+.commentInput {
+  margin-bottom: 10px !important;
+}
+
+.commentList {
+  margin-top: 20px;
+}
+
+.commentItem {
+  background-color: $accent-color;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: $text-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.commentItem div {
+  margin-bottom: 5px;
+}
+
+.button {
+  background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.buttonList {
+  background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+
+  &:hover {
+    background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 600px) {
+  .trackPage {
+    padding: 15px;
+  }
+
+  .trackInfo {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .trackImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .trackDetails h1 {
+    font-size: 1.2rem;
+  }
+
+  .trackDetails p {
+    font-size: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+}

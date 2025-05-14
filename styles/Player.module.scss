@@ -1,0 +1,128 @@
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.timer1 {
+  margin-top: -3px;
+  margin-right: 5px;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.timer2 {
+  margin-top: -3px;
+  margin-left: 5px;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 2;
+
+  background-image: url('/images/Player.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img {
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.volumeWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.volumeProgress {
+  margin-top: 5px;
+}
+
+.trackProgress {
+  width: 100%;
+  background-color: transparent;
+}
+
+.progressWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 10px;
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  z-index: 3;
+}
+
+.truncatedText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 80%;
+  font-size: 15px;
+}
+
+.artistText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 80%;
+  font-size: 12px;
+  color: gray;
+}
+
+@media (max-width: 600px) {
+  .img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .volumeWrapper {
+    display: none;
+  }
+
+  .timer1 {
+    margin-top: 0px;
+    margin-right: 5px;
+    font-size: 13px
+  }
+
+  .timer2 {
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 13px
+  }
+
+  .truncatedText {
+    overflow: hidden;
+  }
+
+  .artistText {
+    overflow: hidden;
+  }
+}

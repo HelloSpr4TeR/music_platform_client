@@ -1,0 +1,118 @@
+$primary-color: #2d3e58;
+$accent-color: #4a90e2;
+$background-color: #f0f4f8;
+$text-color: #fff;
+$button-color: #ffffff;
+
+.container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url('/images/Back.jpg') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.15) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    box-shadow: 0 12px 28px rgba(25, 118, 210, 0.25);
+    transform: translateY(-2px);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0d47a1;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.searchField {
+  margin-top: 8px !important;
+  padding: 15px !important;
+  margin-bottom: -20px !important;
+  margin-top: -20px !important;
+
+  input {
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:focus {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.trackList {
+  margin-top: 8px;
+}
+
+.button {
+  background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .header {
+    flex-direction: column !important;
+    gap: 8px;
+  }
+
+  .searchField {
+    margin-top: -30px !important;
+    margin-bottom: -35px !important;
+    padding: 15px !important;
+  }
+
+  .button {
+    margin-top: 10px !important;
+    width: 100% !important;
+  }
+}

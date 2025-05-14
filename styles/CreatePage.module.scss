@@ -1,0 +1,97 @@
+.createPage {
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+}
+
+.stepWrapper {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stepperWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepsNavigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.stepLabelText {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e0e0e0;
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.stepper {
+  margin-left: 8px;
+}
+
+.button {
+  background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.buttonLoad {
+  background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 600px) {
+  .createPage {
+    padding: 15px;
+  }
+
+  .stepWrapper {
+    padding: 15px;
+  }
+}
