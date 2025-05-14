@@ -24,7 +24,7 @@
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/your-username/music_platform_client.git
+git clone https://github.com/your-username/music-platform-client.git
 
 # Перейти в директорию проекта
 cd soundnest
