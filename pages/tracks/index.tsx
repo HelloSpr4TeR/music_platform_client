@@ -5,39 +5,42 @@ import { NextThunkDispatch } from '@/store/store'
 import { fetchTracks, searchTracks } from '@/store/slices/trackSlice'
 import { Box, Card, Grid2, TextField } from '@mui/material'
 import { useRouter } from 'next/router'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { wrapper } from '../../store/store'
 import { useDispatch } from 'react-redux'
 import styles from '../../styles/TrackList.module.scss'
+import {
+  setQuery,
+  setTimer,
+  setOffset,
+  incrementOffset,
+  setLoading,
+  setHasMore,
+} from '@/store/slices/trackPageUISlice'
 
-const index = () => {
+const Index = () => {
   const router = useRouter()
   const { tracks, error } = useTypedSelector(state => state.track)
-  const [query, setQuery] = useState<string>('')
+  const { query, timer, offset, loading, hasMore } = useTypedSelector(state => state.trackUI)
   const dispatch = useDispatch() as NextThunkDispatch
-  const [timer, setTimer] = useState(null)
-
-  const [offset, setOffset] = useState(10)
-  const [loading, setLoading] = useState(false)
-  const [hasMore, setHasMore] = useState(true)
-  const observerRef = useRef(null)
+  const observerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (loading || !hasMore) return
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        setLoading(true)
+        dispatch(setLoading(true))
         dispatch(fetchTracks({ offset, count: 10 }))
           .unwrap()
-          .then((newTracks) => {
+          .then(newTracks => {
             if (newTracks.length < 10) {
-              setHasMore(false)
+              dispatch(setHasMore(false))
             }
-            setOffset((prev) => prev + 10)
+            dispatch(incrementOffset(10))
           })
           .finally(() => {
-            setLoading(false)
+            dispatch(setLoading(false))
           })
       }
     }, {
@@ -49,19 +52,23 @@ const index = () => {
     return () => {
       if (observerRef.current) observer.unobserve(observerRef.current)
     }
-  }, [offset, loading, hasMore])
+  }, [offset, loading, hasMore, dispatch])
 
-  const search = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value)
+  const search = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    dispatch(setQuery(value))
+
     if (timer) {
       clearTimeout(timer)
     }
-    setTimer(
-      setTimeout(async () => {
-        await dispatch(await searchTracks(e.target.value))
-      }, 500)
-    )
-    await dispatch(await searchTracks(e.target.value))
+
+    const newTimer = setTimeout(async () => {
+      await dispatch(searchTracks(value))
+      dispatch(setHasMore(false))
+      dispatch(setOffset(10))
+    }, 500)
+
+    dispatch(setTimer(newTimer))
   }
 
   if (error) {
@@ -83,7 +90,7 @@ const index = () => {
                 onClick={() => router.push('/tracks/create')}
                 className={styles.button}
               >
-                Загрузить
+                Загрузить трек
               </button>
             </Grid2>
           </Box>
@@ -103,7 +110,7 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ store }) => {
   const dispatch = store.dispatch as NextThunkDispatch

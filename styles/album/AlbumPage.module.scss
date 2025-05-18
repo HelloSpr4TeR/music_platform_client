@@ -1,0 +1,26 @@
+.albumPage {
+    padding: 20px;
+}
+
+.albumHeader {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.albumImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.albumInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trackList {
+    margin-top: 20px;
+}

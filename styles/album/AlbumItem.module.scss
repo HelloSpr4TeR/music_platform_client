@@ -1,0 +1,27 @@
+.albumItem {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.albumImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.albumInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.albumName {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.albumArtist {
+    color: gray;
+}

@@ -1,0 +1,76 @@
+.albumList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.createButton {
+    padding: 8px 16px;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.createButton {
+    background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(45deg, #2575fc 30%, #2200ff 90%);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        background: linear-gradient(45deg, #2200ff 30%, #2575fc 90%);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}

@@ -42,4 +42,12 @@ interface FetchTracksErrorActon {
     payload: string
 }
 
+export interface TrackPageUIState {
+    query: string
+    timer: ReturnType<typeof setTimeout> | null
+    offset: number
+    loading: boolean
+    hasMore: boolean
+}
+
 export type TrackAction = FetchTracksActon | FetchTracksErrorActon
