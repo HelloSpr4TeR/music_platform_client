@@ -1,12 +1,14 @@
 import React from 'react';
 import AlbumItem from './AlbumItem';
 import styles from '../../styles/album/AlbumList.module.scss';
+import { ITrack } from '@/types/track';
 
 interface Album {
     _id: string;
     picture: string;
     name: string;
     author: string;
+    tracks: ITrack[]
 }
 
 interface AlbumListProps {
