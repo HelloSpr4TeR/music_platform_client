@@ -53,6 +53,14 @@ const TrackPage = ({ serverTrack }) => {
                 <h1>Слова в треке</h1>
                 <p>{track.text}</p>
                 <h1>Комментарии</h1>
+                <div className={styles.commentList}>
+                    {track.comments.map(comment =>
+                        <div key={comment._id} className={styles.commentItem}>
+                            <div>Автор - {comment.username}</div>
+                            <div>Комментарий - {comment.text}</div>
+                        </div>
+                    )}
+                </div>
                 <div className={styles.commentSection}>
                     <Grid2 container>
                         <TextField
@@ -71,14 +79,6 @@ const TrackPage = ({ serverTrack }) => {
                         />
                         <button className={styles.button} onClick={addComment}>Отправить</button>
                     </Grid2>
-                </div>
-                <div className={styles.commentList}>
-                    {track.comments.map(comment =>
-                        <div key={comment._id} className={styles.commentItem}>
-                            <div>Автор - {comment.username}</div>
-                            <div>Комментарий - {comment.text}</div>
-                        </div>
-                    )}
                 </div>
             </div>
         </MainLayout>

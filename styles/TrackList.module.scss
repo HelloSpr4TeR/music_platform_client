@@ -24,11 +24,6 @@ $button-color: #ffffff;
   border-radius: 10px !important;
   box-shadow: 0 8px 20px rgba(25, 118, 210, 0.15) !important;
   transition: all 0.3s ease !important;
-
-  &:hover {
-    box-shadow: 0 12px 28px rgba(25, 118, 210, 0.25);
-    transform: translateY(-2px);
-  }
 }
 
 .header {

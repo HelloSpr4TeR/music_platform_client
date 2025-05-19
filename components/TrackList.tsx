@@ -20,7 +20,7 @@ const TrackList: React.FC<TrackListProps> = ({ tracks }) => {
 
     return (
         <Grid2 container direction='column'>
-            <Box p={2}>
+            <Box sx={{ padding: '15px' }}>
                 {tracks.map(track =>
                     <TrackItem
                         key={track._id}

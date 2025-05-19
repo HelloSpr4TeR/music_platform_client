@@ -88,7 +88,6 @@ const AlbumsPage = () => {
                         Создать альбом
                     </button>
                 </header>
-
                 <input
                     type="text"
                     value={query}
