@@ -1,11 +1,11 @@
 import { Close, Pause, PlayArrow, VolumeUp } from '@mui/icons-material'
 import { Grid2, IconButton } from '@mui/material'
 import React, { useEffect } from 'react'
-import styles from '../styles/Player.module.scss'
+import styles from '../../styles/player/Player.module.scss'
 import TrackProgress from './TrackProgress'
 import { useActions } from '@/hooks/useActions'
 import { useTypedSelector } from '@/hooks/useTypedSelector'
-import VolumeProgress from './VolumeProgress'
+import VolumeProgress from '../player/VolumeProgress'
 import { useMediaQuery } from '@mui/material';
 
 

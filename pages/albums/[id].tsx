@@ -3,8 +3,8 @@ import React from 'react'
 import { GetServerSideProps } from 'next'
 import axios from 'axios'
 import { ITrack } from '@/types/track'
-import TrackList from '@/components/TrackList'
-import styles from '../../styles/album/AlbumPage.module.scss'
+import TrackList from '@/components/tracks/TrackList'
+import styles from '../../styles/albums/AlbumPage.module.scss'
 
 interface Album {
     _id: string;

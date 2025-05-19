@@ -6,7 +6,7 @@ import { TextField, Box } from '@mui/material'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import styles from '../../styles/CreatePage.module.scss'
+import styles from '../../styles/tracks/CreatePage.module.scss'
 
 const Create = () => {
   const [activeStep, setActiveStep] = useState(0)
@@ -41,10 +41,12 @@ const Create = () => {
     }
   }
 
+  const trackSteps = ['Введите информацию о треке', 'Загрузите обложку трека', 'Загрузите трек']
+
   return (
     <MainLayout>
       <div className={styles.createPage}>
-        <StepWrapper activeStep={activeStep} className={styles.stepWrapper}>
+        <StepWrapper activeStep={activeStep} className={styles.stepWrapper} steps={trackSteps}>
           {activeStep === 0 && (
             <Box display="flex" flexDirection="column" gap={2} position="relative" sx={{ mt: 1, width: '95%', mx: 'auto' }}>
               <TextField {...name} label="Название трека" fullWidth />

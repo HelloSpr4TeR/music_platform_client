@@ -1,7 +1,7 @@
 import { ITrack } from '@/types/track';
 import { Card, Grid2, IconButton } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/TrackItem.module.scss';
+import styles from '../../styles/tracks/TrackItem.module.scss';
 import { useRouter } from 'next/router';
 import { useActions } from '@/hooks/useActions';
 import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';

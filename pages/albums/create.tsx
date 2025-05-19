@@ -4,10 +4,10 @@ import { useInput } from '@/hooks/useInput'
 import React, { useEffect, useState } from 'react'
 import FileUpload from '@/components/FileUpload'
 import StepWrapper from '@/components/StepWrapper'
-import TrackAddList from '@/components/album/TrackAddList'
+import TrackAddList from '@/components/albums/TrackAddList'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import styles from '../../styles/CreatePage.module.scss'
+import styles from '../../styles/tracks/CreatePage.module.scss'
 
 const CreateAlbumPage = () => {
     const [activeStep, setActiveStep] = useState(0)
@@ -57,10 +57,16 @@ const CreateAlbumPage = () => {
         }
     }
 
+    const albumSteps = [
+        'Введите информацию об альбоме',
+        'Загрузите обложку альбома',
+        'Выберите треки'
+    ]
+
     return (
         <MainLayout>
             <div className={styles.createPage}>
-                <StepWrapper activeStep={activeStep}>
+                <StepWrapper activeStep={activeStep} steps={albumSteps}>
                     {activeStep === 0 && (
                         <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 1, width: '95%', mx: 'auto' }}>
                             <TextField {...name} label="Название альбома" fullWidth />
@@ -91,7 +97,6 @@ const CreateAlbumPage = () => {
                         />
                     )}
                 </StepWrapper>
-
                 <div className={styles.stepsNavigation}>
                     <button onClick={back} className={styles.button}>Назад</button>
                     <button
@@ -117,7 +122,7 @@ const CreateAlbumPage = () => {
                                     : 'pointer',
                         }}
                     >
-                        {activeStep === 2 ? 'Создать альбом' : 'Далее'}
+                        {activeStep === 2 ? 'Создать' : 'Далее'}
                     </button>
                 </div>
             </div>

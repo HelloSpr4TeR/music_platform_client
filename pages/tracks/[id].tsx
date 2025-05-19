@@ -6,7 +6,7 @@ import axios from 'axios'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import styles from '../../styles/TrackPage.module.scss'
+import styles from '../../styles/tracks/TrackPage.module.scss'
 
 const TrackPage = ({ serverTrack }) => {
     const [track, setTrack] = useState<ITrack>(serverTrack)

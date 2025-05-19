@@ -1,25 +1,24 @@
 import { Card, Container, Grid2, Step, StepLabel, Stepper } from '@mui/material'
 import React, { ReactNode } from 'react'
-import styles from '../styles/CreatePage.module.scss'
+import styles from '../styles/tracks/CreatePage.module.scss'
 
 interface StepWrapperProps {
-    activeStep: number
-    children: ReactNode
+    activeStep: number;
+    children: ReactNode;
+    steps: string[];
     className?: string;
 }
 
-const steps = ['Введите информацию о треке', 'Загрузите обложку трека', 'Загрузите трек']
-
-const StepWrapper: React.FC<StepWrapperProps> = ({ activeStep, children, className }) => {
+const StepWrapper: React.FC<StepWrapperProps> = ({ activeStep, children, steps, className }) => {
     return (
         <Container className={className}>
             <div className={styles.stepperWrapper}>
                 <Stepper activeStep={activeStep} className={styles.stepper}>
-                    {steps.map((_, index) =>
+                    {steps.map((_, index) => (
                         <Step key={index} completed={activeStep > index}>
                             <StepLabel />
                         </Step>
-                    )}
+                    ))}
                 </Stepper>
                 <div className={styles.stepLabelText}>
                     {steps[activeStep]}
@@ -32,7 +31,7 @@ const StepWrapper: React.FC<StepWrapperProps> = ({ activeStep, children, classNa
                 </Card>
             </Grid2>
         </Container>
-    )
-}
+    );
+};
 
-export default StepWrapper
+export default StepWrapper;

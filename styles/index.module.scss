@@ -8,7 +8,9 @@ $overlay-color: rgba(0, 0, 0, 0.5);
   position: relative;
   padding: 50px 20px;
   background-image: url('/images/main.jpg');
-  background-size: cover;
+  background-size: auto 100%;
+  max-width: 800px;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-position: center;
   color: $text-color;
@@ -36,7 +38,7 @@ $overlay-color: rgba(0, 0, 0, 0.5);
 
 .heroImg {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;

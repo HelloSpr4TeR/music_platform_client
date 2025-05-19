@@ -1,4 +1,4 @@
-import AlbumList from '@/components/album/AlbumList'
+import AlbumList from '@/components/albums/AlbumList'
 import MainLayout from '@/layouts/MainLayout'
 import { useTypedSelector } from '@/hooks/useTypedSelector'
 import { NextThunkDispatch } from '@/store/store'
@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useRef } from 'react'
 import { wrapper } from '../../store/store'
 import { useDispatch } from 'react-redux'
-import styles from '../../styles/album/AlbumList.module.scss'
+import styles from '../../styles/albums/AlbumList.module.scss'
 import {
     setQuery,
     setTimer,

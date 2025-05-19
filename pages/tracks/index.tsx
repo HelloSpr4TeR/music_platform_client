@@ -1,4 +1,4 @@
-import TrackList from '@/components/TrackList'
+import TrackList from '@/components/tracks/TrackList'
 import { useTypedSelector } from '@/hooks/useTypedSelector'
 import MainLayout from '@/layouts/MainLayout'
 import { NextThunkDispatch } from '@/store/store'
@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useRef } from 'react'
 import { wrapper } from '../../store/store'
 import { useDispatch } from 'react-redux'
-import styles from '../../styles/TrackList.module.scss'
+import styles from '../../styles/tracks/TrackList.module.scss'
 import {
   setQuery,
   setTimer,

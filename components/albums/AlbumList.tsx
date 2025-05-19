@@ -1,6 +1,6 @@
 import React from 'react';
 import AlbumItem from './AlbumItem';
-import styles from '../../styles/album/AlbumList.module.scss';
+import styles from '../../styles/albums/AlbumList.module.scss';
 import { ITrack } from '@/types/track';
 
 interface Album {
