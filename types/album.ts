@@ -1,3 +1,5 @@
+import { ITrack } from '@/types/track';
+
 export interface IAlbum {
     _id: string;
     name: string;
@@ -17,4 +19,16 @@ export interface AlbumUIState {
     offset: number
     loading: boolean
     hasMore: boolean
+}
+
+export interface Album {
+    _id: string;
+    picture: string;
+    name: string;
+    author: string;
+    tracks: ITrack[];
+}
+
+export interface AlbumItemProps {
+    album: Album;
 }
