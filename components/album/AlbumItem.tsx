@@ -1,8 +1,20 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import styles from '../../styles/album/AlbumItem.module.scss';
-import { AlbumItemProps } from '../../types/album';
+import { ITrack } from '@/types/track';
 
+
+interface Album {
+    _id: string;
+    picture: string;
+    name: string;
+    author: string;
+    tracks: ITrack[];
+}
+
+interface AlbumItemProps {
+    album: Album;
+}
 
 const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
     const router = useRouter();
