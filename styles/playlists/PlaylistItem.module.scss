@@ -27,8 +27,8 @@
 }
 
 .icon {
-    font-size: 100px;
-    color: #8e2de2;
+    font-size: 100px !important;
+    color: #8e2de2 !important;
 }
 
 .playlistInfo {
@@ -54,6 +54,6 @@
 
 @media (max-width: 600px) {
     .icon {
-        font-size: 80px;
+        font-size: 80px !important;
     }
 }
