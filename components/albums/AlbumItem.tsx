@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/albums/AlbumItem.module.scss';
 import { ITrack } from '@/types/track';
 
-
 interface Album {
     _id: string;
     picture: string;
@@ -23,6 +22,18 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
         router.push(`/albums/${album._id}`);
     };
 
+    const declOfNum = (n: number, titles: [string, string, string]): string => {
+        const cases = [2, 0, 1, 1, 1, 2];
+        return titles[
+            n % 100 > 4 && n % 100 < 20
+                ? 2
+                : cases[n % 10 < 5 ? n % 10 : 5]
+        ];
+    };
+
+    const count = album.tracks.length;
+    const trackWord = declOfNum(count, ['трек', 'трека', 'треков']);
+
     return (
         <div className={styles.albumItem} onClick={handleClick}>
             <img
@@ -33,9 +44,9 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ album }) => {
             <div className={styles.albumInfo}>
                 <h3 className={styles.albumName}>{album.name}</h3>
                 <p className={styles.albumArtist}>{album.author}</p>
-            </div>
-            <div className={styles.tracksCount}>
-                <p>{album.tracks.length}</p>
+                <p className={styles.tracksCount}>
+                    {count} {trackWord}
+                </p>
             </div>
         </div>
     );

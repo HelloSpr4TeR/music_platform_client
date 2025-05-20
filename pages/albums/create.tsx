@@ -9,6 +9,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import styles from '../../styles/tracks/CreatePage.module.scss'
 
+
 const CreateAlbumPage = () => {
     const [activeStep, setActiveStep] = useState(0)
     const [picture, setPicture] = useState<File | null>(null)

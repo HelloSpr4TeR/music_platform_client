@@ -1,4 +1,4 @@
-.albumPage {
+.playlistPage {
     margin: auto;
     width: 100%;
     max-width: 800px;
@@ -15,27 +15,39 @@
     transition: all 0.3s ease;
 }
 
-.albumHeader {
+.playlistHeader {
     display: flex;
-    gap: 20px;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.albumImage {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.albumInfo {
+.iconWrapper {
+    background-color: #eee;
+    border-radius: 16px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin-right: 20px;
+}
+
+.icon {
+    font-size: 64px;
+    color: #333;
+}
+
+.playlistInfo h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.playlistInfo p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #666;
 }
 
 .trackList {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -60,18 +72,9 @@
 }
 
 @media (max-width: 600px) {
-    .albumHeader {
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
-
     .trackList {
-        margin-top: -30px;
         width: 100%;
+        margin-top: -30px;
         justify-content: space-between;
-    }
-
-    .albumInfo {
-        margin-top: -10px;
     }
 }

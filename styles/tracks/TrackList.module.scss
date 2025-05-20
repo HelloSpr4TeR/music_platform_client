@@ -40,20 +40,13 @@ $button-color: #ffffff;
 }
 
 .searchField {
-  margin-top: 8px !important;
-  padding: 15px !important;
-  margin-bottom: -20px !important;
-  margin-top: -20px !important;
-
-  input {
-    background-color: #e3f2fd;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-
-    &:focus {
-      background-color: #ffffff;
-    }
-  }
+  margin: 0 auto 20px;
+  width: 90%;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .trackList {
@@ -98,12 +91,6 @@ $button-color: #ffffff;
   .header {
     flex-direction: column !important;
     gap: 8px;
-  }
-
-  .searchField {
-    margin-top: -30px !important;
-    margin-bottom: -35px !important;
-    padding: 15px !important;
   }
 
   .button {

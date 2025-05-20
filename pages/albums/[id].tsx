@@ -5,6 +5,8 @@ import axios from 'axios'
 import { ITrack } from '@/types/track'
 import TrackList from '@/components/tracks/TrackList'
 import styles from '../../styles/albums/AlbumPage.module.scss'
+import { useRouter } from 'next/router'
+
 
 interface Album {
     _id: string;
@@ -19,8 +21,19 @@ interface AlbumPageProps {
 }
 
 const AlbumPage: React.FC<AlbumPageProps> = ({ album }) => {
+    const router = useRouter();
+
     return (
-        <MainLayout title={`Альбом - ${album.name}`} keywords={`Альбом, ${album.name}, ${album.author}`}>
+        <MainLayout
+            title={`Музыкальная площадка - ${album.name} - ${album.author}`}
+            keywords={`Музыка, артисты, ${album.name}, ${album.author}`}
+        >
+            <button
+                className={styles.button}
+                onClick={() => router.push('/albums')}
+            >
+                В список альбомов
+            </button>
             <div className={styles.albumPage}>
                 <div className={styles.albumHeader}>
                     <img
@@ -40,16 +53,16 @@ const AlbumPage: React.FC<AlbumPageProps> = ({ album }) => {
                 </div>
             </div>
         </MainLayout>
-    )
-}
+    );
+};
 
-export default AlbumPage
+export default AlbumPage;
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/albums/${params?.id}`)
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/albums/${params?.id}`);
     return {
         props: {
             album: response.data
         }
-    }
-}
+    };
+};

@@ -35,9 +35,17 @@ export default function Navbar() {
       }
     };
 
+    const handleScroll = () => {
+      if (open) {
+        setOpen(false);
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [open]);
 

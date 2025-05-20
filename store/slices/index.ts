@@ -5,6 +5,8 @@ import trackReducer from "./trackSlice";
 import albumReducer from "./albumSlice"
 import albumUIReducer from './albumPageUISlice'
 import trackUIReducer from './trackPageUISlice'
+import playlistUIReducer from './playlistPageUISlice';
+import playlistReducer from './playlistSlice';
 
 
 const rootReducer = combineReducers({
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
     track: trackReducer,
     album: albumReducer,
     albumUI: albumUIReducer,
-    trackUI: trackUIReducer
+    trackUI: trackUIReducer,
+    playlistUI: playlistUIReducer,
+    playlist: playlistReducer,
 });
 
 export const reducer = (state: RootState | undefined, action: any) => {

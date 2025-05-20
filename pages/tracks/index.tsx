@@ -3,7 +3,7 @@ import { useTypedSelector } from '@/hooks/useTypedSelector'
 import MainLayout from '@/layouts/MainLayout'
 import { NextThunkDispatch } from '@/store/store'
 import { fetchTracks, searchTracks } from '@/store/slices/trackSlice'
-import { Box, Card, Grid2, TextField } from '@mui/material'
+import { Box, Card, Grid2 } from '@mui/material'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef } from 'react'
 import { wrapper } from '../../store/store'
@@ -94,8 +94,7 @@ const Index = () => {
               </button>
             </Grid2>
           </Box>
-          <TextField
-            fullWidth
+          <input
             value={query}
             onChange={search}
             className={styles.searchField}

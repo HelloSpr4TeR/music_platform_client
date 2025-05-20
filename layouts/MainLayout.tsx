@@ -17,6 +17,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, k
 
   const isTracksPage = router.pathname === '/tracks';
   const isAlbumPage = router.pathname === '/albums/[id]';
+  const isPlaylistPage = router.pathname === '/playlists/[id]';
 
   return (
     <>
@@ -32,7 +33,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, k
       <Container style={{ marginTop: '90px' }}>
         {children}
       </Container>
-      {(isTracksPage || isAlbumPage) && <Player />}
+      {(isTracksPage || isAlbumPage || isPlaylistPage) && <Player />}
     </>
   );
 }
