@@ -2,7 +2,7 @@
     margin: auto;
     width: 100%;
     max-width: 800px;
-    padding: 16px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -75,6 +75,5 @@
     .trackList {
         width: 100%;
         margin-top: -30px;
-        justify-content: space-between;
     }
 }

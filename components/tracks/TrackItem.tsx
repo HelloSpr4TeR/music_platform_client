@@ -1,5 +1,5 @@
 import { ITrack } from '@/types/track';
-import { Card, Grid2, IconButton } from '@mui/material';
+import { Card, IconButton } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/tracks/TrackItem.module.scss';
 import { useRouter } from 'next/router';
@@ -51,29 +51,29 @@ const TrackItem: React.FC<TrackItemProps> = ({ track, active = false }) => {
     return (
         <Card
             className={clsx(styles.track, { [styles.active]: active })}
-            onClick={() => router.push('/tracks/' + track._id)}
         >
-            <div className={styles.mediaContainer}>
-                <IconButton onClick={play} disabled={isButtonDisabled}>
+            <img
+                width={70}
+                height={70}
+                src={`${process.env.NEXT_PUBLIC_API_URL}/${track.picture}`}
+                alt={track.name}
+                onClick={() => router.push('/tracks/' + track._id)}
+            />
+            <div className={styles.info}>
+                <div className={styles.textEllipsis}>{track.name}</div>
+                <div className={`${styles.textEllipsis} ${styles.trackArtist}`}>{track.artist}</div>
+            </div>
+            <div className={styles.iconTime}>
+                <IconButton onClick={play} disabled={isButtonDisabled} className={styles.IconButton}>
                     {!isCurrent || pause ? (
                         <FaPlayCircle className={styles.faPlayPause} />
                     ) : (
                         <FaPauseCircle className={styles.faPlayPause} />
                     )}
                 </IconButton>
-                <img
-                    width={70}
-                    height={70}
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/${track.picture}`}
-                    alt={track.name}
-                />
-            </div>
-            <Grid2 container direction="column" className={styles.info}>
-                <div className={styles.textEllipsis}>{track.name}</div>
-                <div className={`${styles.textEllipsis} ${styles.trackArtist}`}>{track.artist}</div>
-            </Grid2>
-            <div className={styles.time}>
-                {duration !== null ? formatDuration(duration) : '...'}
+                <div className={styles.time}>
+                    {duration !== null ? formatDuration(duration) : '...'}
+                </div>
             </div>
         </Card>
     );

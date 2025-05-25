@@ -14,6 +14,8 @@
     border: 2px solid transparent;
     cursor: pointer;
     margin-bottom: -10px;
+    width: 90%;
+    margin: 0 auto 20px;
 }
 
 .playlistItem:hover {
@@ -53,6 +55,11 @@
 }
 
 @media (max-width: 600px) {
+    .playlistItem {
+        width: 100%;
+    }
+
+
     .icon {
         font-size: 80px !important;
     }

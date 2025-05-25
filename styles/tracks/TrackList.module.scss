@@ -8,6 +8,7 @@ $button-color: #ffffff;
   max-width: 100%;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 
 .card {
@@ -17,6 +18,7 @@ $button-color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-sizing: border-box;
   background-image: url('/images/back.jpg') !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
