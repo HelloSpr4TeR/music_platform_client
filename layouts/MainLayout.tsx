@@ -1,9 +1,10 @@
 import Navbar from '@/components/Navbar';
-import Player from '@/components/player/Player';
 import { Container } from '@mui/material';
 import Head from 'next/head';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, lazy, Suspense } from 'react';
 import { useRouter } from 'next/router';
+
+const Player = lazy(() => import('@/components/player/Player'));
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -33,7 +34,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, k
       <Container style={{ marginTop: '90px' }}>
         {children}
       </Container>
-      {(isTracksPage || isAlbumPage || isPlaylistPage) && <Player />}
+      {(isTracksPage || isAlbumPage || isPlaylistPage) && (
+        <Suspense fallback={<div>Загрузка плеера...</div>}>
+          <Player />
+        </Suspense>
+      )}
     </>
   );
 }
