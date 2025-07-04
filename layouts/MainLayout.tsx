@@ -24,7 +24,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, description, k
     <>
       <Head>
         <title>{title || 'Музыкальная площадка'}</title>
-        <meta name="description" content={`Музыкальная площадка. Здесь каждый может оставить свой трек и стать знаменитым.` + description} />
+        <meta name="description" content={`Музыкальная площадка. Здесь каждый может оставить свой трек и стать знаменитым.`} />
         <meta name="robots" content="index, follow" />
         <meta name="keywords" content={keywords || "Музыка, треки, артисты"} />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
