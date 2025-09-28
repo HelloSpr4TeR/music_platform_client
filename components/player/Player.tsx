@@ -1,6 +1,6 @@
 import { Close, Pause, PlayArrow, VolumeUp } from '@mui/icons-material'
 import { Grid2, IconButton } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import styles from '../../styles/player/Player.module.scss'
 import TrackProgress from './TrackProgress'
 import { useActions } from '@/hooks/useActions'
@@ -157,4 +157,4 @@ const Player = () => {
   )
 }
 
-export default Player;
+export default memo(Player);

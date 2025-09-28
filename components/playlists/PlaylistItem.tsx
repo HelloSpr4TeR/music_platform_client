@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../../styles/playlists/PlaylistItem.module.scss';
 import { ITrack } from '@/types/track';
@@ -17,7 +17,7 @@ interface PlaylistItemProps {
 const declOfNum = (n: number, titles: [string, string, string]): string => {
     const cases = [2, 0, 1, 1, 1, 2];
     return titles[(n % 100 > 4 && n % 100 < 20) ? 2 : cases[(n % 10 < 5) ? n % 10 : 5]];
-};
+}
 
 const PlaylistItem: React.FC<PlaylistItemProps> = ({ playlist }) => {
     const router = useRouter();
@@ -42,4 +42,4 @@ const PlaylistItem: React.FC<PlaylistItemProps> = ({ playlist }) => {
     );
 };
 
-export default PlaylistItem;
+export default memo(PlaylistItem);

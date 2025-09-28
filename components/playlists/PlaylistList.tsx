@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PlaylistItem from './PlaylistItem';
 import styles from '../../styles/playlists/PlaylistList.module.scss';
 import { Playlist } from '@/types/playlist';
@@ -18,4 +18,4 @@ const PlaylistList: React.FC<PlaylistListProps> = ({ playlists }) => {
     );
 };
 
-export default PlaylistList;
+export default memo(PlaylistList);
